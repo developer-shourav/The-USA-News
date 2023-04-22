@@ -1,16 +1,35 @@
-import React from 'react';
-import Logo from '../../../assets/logo.png';
-import moment from 'moment';
+import React from "react";
+import Logo from "../../../assets/logo.png";
+import moment from "moment";
+import { Button, Container } from "react-bootstrap";
+import Marquee from "react-fast-marquee";
 const Header = () => {
-    return (
-        <div>
-            <div className="text-center ">
-            <img className='img-fluid' src={Logo} alt="" />
-            <p className='text-secondary'>Journalism Without Fear or Favour<small></small></p>
-            <p>{moment().format("dddd")}, <span className='text-secondary'>{moment().format("MMMM D, YYYY")}</span></p>
-            </div>
-        </div>
-    );
+  return (
+    <Container>
+      <div className="text-center ">
+        <img className="img-fluid" src={Logo} alt="" />
+        <p className="text-secondary">
+          Journalism Without Fear or Favour<small></small>
+        </p>
+        <p>
+          {moment().format("dddd")},{" "}
+          <span className="text-secondary">
+            {moment().format("MMMM D, YYYY")}
+          </span>
+        </p>
+      </div>
+
+      <div className="d-flex bg-secondary bg-opacity-25 py-3 px-3">
+        <Button className="rounded-0 me-2" variant="danger">
+          Latest
+        </Button>
+        <Marquee className="font-bold  fw-semibold" speed={50} gradient={false}>
+          I can be a React component, multiple React components, or just some
+          text.
+        </Marquee>
+      </div>
+    </Container>
+  );
 };
 
 export default Header;
