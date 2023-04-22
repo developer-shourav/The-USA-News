@@ -1,9 +1,11 @@
 import React from 'react';
+import Logo from '../../../assets/logo.png';
 
 const Header = () => {
     return (
         <div>
-            <h2>This is header</h2>
+            <img src={Logo} alt="" />
+            <p className='text-secondary'>Journalism Without Fear or Favour<small></small></p>
         </div>
     );
 };
