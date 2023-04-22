@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAm2e1JfZnwN14pauG977CNoRranyKTKsk",
-  authDomain: "the-usa-news-280d2.firebaseapp.com",
-  projectId: "the-usa-news-280d2",
-  storageBucket: "the-usa-news-280d2.appspot.com",
-  messagingSenderId: "895335806915",
-  appId: "1:895335806915:web:fd9affd1809e94f0c16f76"
+  apiKey: "AIzaSyCGh5lBeQ-2vmQlicmSjhNOBsafeg8mHg8",
+  authDomain: "the-usa-news-eb1a5.firebaseapp.com",
+  projectId: "the-usa-news-eb1a5",
+  storageBucket: "the-usa-news-eb1a5.appspot.com",
+  messagingSenderId: "934618494391",
+  appId: "1:934618494391:web:266f5af85aafab10fc2432"
 };
 
 // Initialize Firebase
