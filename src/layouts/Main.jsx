@@ -7,6 +7,7 @@ import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import RightNav from '../pages/Shared/RightNav/RightNav';
 
 const Main = () => {
+
     return (
         <div>
             <Header></Header>
@@ -18,7 +19,7 @@ const Main = () => {
                         </Col>
 
                         <Col sm={6}>
-                          <h2>Main Container Coming</h2>
+                          <Outlet> </Outlet>
                         </Col>
 
                         <Col sm={3}>
