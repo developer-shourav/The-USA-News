@@ -3,6 +3,8 @@ import React from "react";
 import {  Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {BsBookmark, BsShare} from "react-icons/bs";
+import {AiFillEye, AiOutlineStar, AiFillStar} from "react-icons/ai";
+import Rating from "react-rating";
 
 const NewsCard = ({ news }) => {
   const {
@@ -18,7 +20,7 @@ const NewsCard = ({ news }) => {
   } = news;
   return (
       <Card className=" mb-4">
-        <Card.Header className="d-flex align-items-center">
+        <Card.Header className="d-flex align-items-center border-0 bg-secondary bg-opacity-10">
           <Image style={{widows:'40px', height:'40px'}} src={author?.img} roundedCircle /> 
           <div className="ps-2 flex-grow-1">
             <p className="mb-0">{author?.name}</p>
@@ -36,7 +38,22 @@ const NewsCard = ({ news }) => {
             {details.length < 250 ? <>{details}</> : <> {details.slice(0, 250)} ... <Link to ={`/news/${_id}`} >Read More</Link> </>}
           </Card.Text>
         </Card.Body>
-        <Card.Footer className="text-muted">2 days ago</Card.Footer>
+        <Card.Footer className="text-muted d-flex  align-items-center">
+          <div className="flex-grow-1">
+            <Rating className="fs-5" style={{color:'#FF8C47'}}
+              placeholderRating={rating?.number}
+              readonly
+              emptySymbol={<AiOutlineStar/>}
+              placeholderSymbol={<AiFillStar/>}
+              fullSymbol={<AiFillStar/>}
+            />
+            
+             <span className="mt-1">{rating?.number}</span>
+          </div>
+          <div>
+             <AiFillEye className="fs-4" /> {total_view}
+          </div>
+        </Card.Footer>
       </Card>
   );
 };
