@@ -25,7 +25,7 @@ const EditorsInSight = () => {
           <Col>
             <Card className='border-0'>
               <Card.Img variant="top" src={InSightImg2} />
-              <Card.Body>
+              <Card.Body className='ps-0'>
                 <Card.Title>35 The Most Stylish Wedding Guest Dresses For Spring</Card.Title>
                 <div className='d-flex align-items-center fw-semibold text-secondary '>
                   <BsCalendar4> </BsCalendar4>
