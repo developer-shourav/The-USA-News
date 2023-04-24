@@ -13,8 +13,8 @@ const Category = () => {
         fetch('http://localhost:5000/catagories')
         .then( res => res.json())
         .then ( data => {
-           const topic = data.find( cate => cate.id == id);
-           setCategoryName(topic.name)
+           const topic = data?.find( cate => cate.id == id);
+           setCategoryName(topic?.name)
         })
     },[id])
     
