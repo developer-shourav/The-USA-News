@@ -5,6 +5,7 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
+import {FaUserCircle} from 'react-icons/fa';
 const Header = () => { 
   
   const {user} = useContext(AuthContext);
@@ -46,9 +47,14 @@ const Header = () => {
             <Nav.Link href="#pricing">Career</Nav.Link>
           </Nav>
           <Nav className="d-flex align-items-center">
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            {
+              user && <Nav.Link > 
+              <FaUserCircle className="fs-2 text-black" /> {user?.displayName}
+              </Nav.Link>
+            }
+
             <Nav.Link eventKey={2} href="#memes">
-              <Button variant="secondary rounded-0"> Login</Button>
+              { user ? <Button variant="secondary rounded-0"> Logout</Button> : <Link to='/login'><Button variant="secondary rounded-0"> Login</Button></Link>}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
