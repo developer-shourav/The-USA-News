@@ -17,7 +17,7 @@ const LeftNav = () => {
                 {
                     categories.map( category => <p 
                         key={category.id}> 
-                        <NavLink to={`/category/${category.id}`} className= { ({isActive}) => isActive ? 'text-black bg-secondary w-100 rounded bg-opacity-25  px-4 py-3 my-1 fw-semibold text-decoration-none' : 'text-secondary rounded w-100 px-4 py-3 my-1 fw-semibold text-decoration-none'}   >{category?.name}</NavLink>
+                        <NavLink to={`/category/${category.id}`} className= { ({isActive}) => isActive ? 'text-black bg-secondary d-inline-block  rounded bg-opacity-25  px-4 py-3 my-1 fw-semibold text-decoration-none' : 'text-secondary rounded px-4 py-3 my-1 fw-semibold text-decoration-none'}   >{category?.name}</NavLink>
 
                     </p>)
                 }
