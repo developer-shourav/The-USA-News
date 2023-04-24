@@ -6,12 +6,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import RightNav from '../pages/Shared/RightNav/RightNav';
 import NavigationBar from '../pages/Shared/NavigationBar/NavigationBar';
+import LatestNewsMarque from '../pages/Shared/LatestNewsMarque/LatestNewsMarque';
 
 const Main = () => {
 
     return (
         <div>
             <Header></Header>
+             <Container> <LatestNewsMarque></LatestNewsMarque></Container>
             <NavigationBar> </NavigationBar>
                 <Container>
                     <Row>
