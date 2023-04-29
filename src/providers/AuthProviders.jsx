@@ -13,6 +13,7 @@ const AuthProviders = ({children}) => {
     const authInfo = {
         user,
     }
+    
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

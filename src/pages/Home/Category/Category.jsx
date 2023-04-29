@@ -10,7 +10,7 @@ const Category = () => {
     const [categoryName, setCategoryName] = useState('');
 
     useEffect( () => {
-        fetch('http://localhost:5000/catagories')
+        fetch('https://the-usa-news-server-developer-shourav.vercel.app/catagories')
         .then( res => res.json())
         .then ( data => {
            const topic = data?.find( cate => cate.id == id);
