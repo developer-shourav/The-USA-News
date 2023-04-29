@@ -10,10 +10,17 @@ const AuthProviders = ({children}) => {
     
     const user = { displayName :"Shourav", };
     
+    const createEmailPassUser = ( email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+    }
+
+
+    
     const authInfo = {
         user,
+        createEmailPassUser
     }
-    
+
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
