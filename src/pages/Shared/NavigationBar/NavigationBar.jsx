@@ -32,7 +32,7 @@ const NavigationBar = () => {
                 </Nav>
                 <Nav className="d-flex align-items-center">
                     {
-                    user && <> <img className='rounded-circle' src={user?.photoURL} alt="" /> {user?.displayName}</>
+                    user && <> <img className='rounded-circle ' width='40px' height='40px' src={user?.photoURL} alt="" /> {user?.displayName}</>
 
                     }
 

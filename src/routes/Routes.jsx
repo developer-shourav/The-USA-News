@@ -7,6 +7,7 @@ import News from "../pages/News/News";
 import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path:':id',
-                element:<News> </News>,
+                element:<PrivetRoutes> <News> </News> </PrivetRoutes>,
                 loader: ({params}) => fetch(`https://the-usa-news-server-developer-shourav.vercel.app/news/${params.id}`)
             }
         ]

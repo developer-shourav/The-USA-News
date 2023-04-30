@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
   const {createEmailPassUser} = useContext(AuthContext);
+  const navigate = useNavigate() ;
+
 
   const handleRegister = (event) => {
      event.preventDefault();
@@ -35,6 +37,7 @@ const Register = () => {
     updateProfile(user, {displayName: userName, photoURL:imageUrl})
     .then( () => {
       console.log('User update successful');
+      navigate('/category/0')
     })
     .catch( error => {
       console.log(error);
