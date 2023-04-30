@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -16,17 +17,28 @@ const Register = () => {
      const photo = form.photo.value;
      const chake = form.chake.value;
      
-     console.log({name}, {email}, {password}, {photo}, {chake});
+     /* console.log({name}, {email}, {password}, {photo}, {chake}); */
 
      createEmailPassUser(email, password)
      .then( result => {
       const createdUser = result.user;
       console.log(createdUser)
+      addUserNameAndImage(result.user, name, photo)
      })
      
      .catch( error => {
       console.log(error.massage);
      })
+  }
+
+  const addUserNameAndImage = (user, userName, imageUrl) => {
+    updateProfile(user, {displayName: userName, photoURL:imageUrl})
+    .then( () => {
+      console.log('User update successful');
+    })
+    .catch( error => {
+      console.log(error);
+    })
   }
     return (
         <Container className="w-25 mx-auto">

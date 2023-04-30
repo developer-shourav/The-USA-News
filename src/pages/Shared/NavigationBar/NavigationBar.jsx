@@ -6,7 +6,17 @@ import { AuthContext } from '../../../providers/AuthProviders';
 
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then( () => {
+            console.log("logout Successfully");
+        })
+        .catch( error => {
+            console.log(error);
+        })
+    }
     return (
         <Container>
            
@@ -22,12 +32,12 @@ const NavigationBar = () => {
                 </Nav>
                 <Nav className="d-flex align-items-center">
                     {
-                    user && <><FaUserCircle className="fs-2 text-black" /> {user?.displayName}</>
+                    user && <> <img className='rounded-circle' src={user?.photoURL} alt="" /> {user?.displayName}</>
 
                     }
 
                     
-                    { user ? <Button variant="secondary rounded-0"> Logout</Button> : <Link to='/login'><Button variant="secondary rounded-0"> Login</Button></Link>}
+                    { user ? <Button onClick={handleLogOut} variant="secondary rounded-0"> Logout</Button> : <Link to='/login'><Button variant="secondary rounded-0"> Login</Button></Link>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
