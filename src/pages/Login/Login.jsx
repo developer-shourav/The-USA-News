@@ -8,7 +8,7 @@ const Login = () => {
 
   const {signInUserWithEmail} = useContext(AuthContext);
 
-  const handleEmailPassSignIn = (event) => {
+  const handleEmailPassSignIn = event => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -20,7 +20,7 @@ const Login = () => {
       console.log(loggedInUser);
     })
     .catch( error =>{
-      console.log( error.message)
+      console.log( error)
     })
   }
 
