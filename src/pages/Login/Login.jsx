@@ -9,7 +9,7 @@ const Login = () => {
   const {signInUserWithEmail} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const redirectLocation = location.state?.from?.pathname;
+  const redirectLocation = location.state?.from?.pathname || '/category/0';
 
   const handleEmailPassSignIn = event => {
     event.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
     .then( result => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
-      navigate(`${redirectLocation? redirectLocation : '/category/0'}`)
+      navigate(redirectLocation)
       
     })
     .catch( error =>{
