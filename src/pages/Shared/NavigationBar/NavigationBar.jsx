@@ -17,6 +17,7 @@ const NavigationBar = () => {
             console.log(error);
         })
     }
+    console.log(import.meta.env.VITE_API_KEY);
     return (
         <Container>
            
